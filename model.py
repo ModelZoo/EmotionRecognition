@@ -105,5 +105,5 @@ class Fer2013Model(BaseModel):
     
     def init(self):
         self.compile(optimizer=self.optimizer(),
-                     loss='sparse_categorical_crossentrop',
+                     loss='sparse_categorical_crossentropy',
                      metrics=['sparse_categorical_accuracy'])
