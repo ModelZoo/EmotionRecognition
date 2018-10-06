@@ -38,7 +38,7 @@ class Trainer(BaseTrainer):
         
         # retrieve train input and target
         x_train, y_train = data_train['pixels'].tolist(), \
-                           pd.get_dummies(data_train['emotion'].astype('float32')).values
+                           tf.keras.utils.to_categorical(data_train['emotion'].astype('float32'), 7)
         # reshape images to 4D (num_samples, width, height, num_channels)
         x_train = np.array(x_train, dtype='float32').reshape(-1, 48, 48, 1)
         # normalize images with max (the maximum pixel intensity is 255)
@@ -46,7 +46,7 @@ class Trainer(BaseTrainer):
         
         # retrieve eval input and target
         x_eval, y_eval = data_eval['pixels'].tolist(), \
-                         pd.get_dummies(data_eval['emotion'].astype('float32')).values
+                         tf.keras.utils.to_categorical(data_eval['emotion'].astype('float32'), 7)
         # reshape images to 4D (num_samples, width, height, num_channels)
         x_eval = np.array(x_eval, dtype='float32').reshape(-1, 48, 48, 1)
         # normalize images with max
@@ -54,8 +54,9 @@ class Trainer(BaseTrainer):
         
         print('xy train shape:', x_train.shape, y_train.shape)
         print('xy eval shape:', x_eval.shape, y_eval.shape)
+        print('Sample', x_train[0], y_train[0], x_train.dtype, y_train.dtype)
         return (x_train, y_train), (x_eval, y_eval)
 
 
 if __name__ == '__main__':
-    Trainer().run()
+    Trainer().prepare_data()
