@@ -56,7 +56,7 @@ class Fer2013Model(BaseModel):
         self.dense2 = tf.keras.layers.Dense(2 * 2 * self.num_features, activation='relu')
         self.drop6 = tf.keras.layers.Dropout(0.4)
         self.dense3 = tf.keras.layers.Dense(2 * self.num_features, activation='relu')
-        self.drop7 = tf.keras.layers.Dense(0.5)
+        self.drop7 = tf.keras.layers.Dropout(0.5)
         
         self.dense4 = tf.keras.layers.Dense(7, activation='softmax')
     
