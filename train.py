@@ -59,4 +59,4 @@ class Trainer(BaseTrainer):
 
 
 if __name__ == '__main__':
-    Trainer().prepare_data()
+    Trainer().run()
