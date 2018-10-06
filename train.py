@@ -37,14 +37,16 @@ class Trainer(BaseTrainer):
         print('Number samples in the evalelopment dataset: ', size_eval)
         
         # retrieve train input and target
-        x_train, y_train = data_train['pixels'].tolist(), pd.get_dummies(data_train['emotion']).values
+        x_train, y_train = data_train['pixels'].tolist(), \
+                           pd.get_dummies(data_train['emotion'].astype('float32')).values
         # reshape images to 4D (num_samples, width, height, num_channels)
         x_train = np.array(x_train, dtype='float32').reshape(-1, 48, 48, 1)
         # normalize images with max (the maximum pixel intensity is 255)
         x_train = x_train / 255.0
         
         # retrieve eval input and target
-        x_eval, y_eval = data_eval['pixels'].tolist(), pd.get_dummies(data_eval['emotion']).values
+        x_eval, y_eval = data_eval['pixels'].tolist(), \
+                         pd.get_dummies(data_eval['emotion'].astype('float32')).values
         # reshape images to 4D (num_samples, width, height, num_channels)
         x_eval = np.array(x_eval, dtype='float32').reshape(-1, 48, 48, 1)
         # normalize images with max
