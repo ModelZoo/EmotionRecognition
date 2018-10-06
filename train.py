@@ -7,6 +7,7 @@ import pandas as pd
 tf.flags.DEFINE_string('data_dir', './fer2013/fer2013.csv', help='Data dir')
 tf.flags.DEFINE_float('learning_rate', 0.001, help='Learning Rate')
 tf.flags.DEFINE_integer('epochs', 1000, help='Max Epochs', allow_override=True)
+tf.flags.DEFINE_integer('early_stop_patience', 20000, help='Early Stop Patience', allow_override=True)
 
 
 class Trainer(BaseTrainer):
