@@ -1,1 +1,5 @@
 fer2013/fer2013.csv filter=lfs diff=lfs merge=lfs -text
+checkpoints/model.ckpt-178.data-00000-of-00001 filter=lfs diff=lfs merge=lfs -text
+checkpoints/model.ckpt-178.index filter=lfs diff=lfs merge=lfs -text
+checkpoints/model.ckpt-178.json filter=lfs diff=lfs merge=lfs -text
+events/events.out.tfevents.1538840526.stcagl-104.v2 filter=lfs diff=lfs merge=lfs -text

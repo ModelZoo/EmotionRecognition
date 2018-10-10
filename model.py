@@ -1,5 +1,6 @@
 from model_zoo.model import BaseModel
 import tensorflow as tf
+import numpy as np
 
 
 class Fer2013Model(BaseModel):
@@ -107,3 +108,8 @@ class Fer2013Model(BaseModel):
         self.compile(optimizer=self.optimizer(),
                      loss='categorical_crossentropy',
                      metrics=['accuracy'])
+    
+    def infer(self, test_data, batch_size=None):
+        logits = self.predict(test_data)
+        preds = np.argmax(logits, axis=-1)
+        return logits, preds
