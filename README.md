@@ -18,6 +18,8 @@ Next, install the dependencies using pip:
 pip3 install -r requirements.txt
 ```
 
+If you do not want to train with pre-trained model, remember to change `checkpoint_restore` to `False`, otherwise `True`.
+
 Finally, just run training:
 
 ```

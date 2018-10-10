@@ -1,4 +1,3 @@
-from model import Fer2013Model
 from model_zoo.inferer import BaseInferer
 import tensorflow as tf
 import cv2
@@ -11,9 +10,6 @@ tf.flags.DEFINE_string('test_dir', 'tests/', help='Dir of test data')
 
 
 class Inferer(BaseInferer):
-    def __init__(self):
-        BaseInferer.__init__(self)
-        self.model_class = Fer2013Model
     
     def prepare_data(self):
         test_dir = self.flags.test_dir
