@@ -48,7 +48,7 @@ Here are the test pictures we picked from the website:
 Then put them to the folder named `tests` and define the
  model path and test folder in `infer.py`:
 
-```
+```python
 tf.flags.DEFINE_string('checkpoint_name', 'model.ckpt-178', help='Model name')
 tf.flags.DEFINE_string('test_dir', 'tests/', help='Dir of test data')
 ```
