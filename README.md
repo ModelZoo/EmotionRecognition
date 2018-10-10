@@ -1,6 +1,6 @@
 # Emotion Recognition
 
-Emotion Recognition Implemented by TensorFlow.
+Emotion Recognition Implemented by  [ModelZoo](https://github.com/ModelZoo/ModelZoo).
 
 ## Usage
 
