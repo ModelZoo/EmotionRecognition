@@ -1,6 +1,6 @@
 # Emotion Recognition
 
-Emotion Recognition Implemented by  [ModelZoo](https://github.com/ModelZoo/ModelZoo).
+Emotion Recognition Implemented by [ModelZoo](https://github.com/ModelZoo/ModelZoo).
 
 ## Usage
 
@@ -25,6 +25,19 @@ Finally, just run training:
 ```
 python3 train.py
 ```
+
+If you want to continue training your model, you need to define `checkpoint_restore` flag in `train.py`:
+
+```python
+tf.flags.DEFINE_bool('checkpoint_restore', True, help='Model restore')
+```
+
+And you can define the specific model with `checkpoint_name` which you want to continue training with:
+
+```python
+tf.flags.DEFINE_string('checkpoint_name', 'model-178.ckpt', help='Model name')
+```
+
 
 ## TensorBoard
 
