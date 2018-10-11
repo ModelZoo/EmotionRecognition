@@ -8,7 +8,7 @@ tf.flags.DEFINE_float('learning_rate', 0.001, help='Learning Rate')
 tf.flags.DEFINE_integer('epochs', 1000, help='Max Epochs')
 tf.flags.DEFINE_integer('early_stop_patience', 500, help='Early Stop Patience')
 tf.flags.DEFINE_bool('checkpoint_restore', False, help='Model restore')
-tf.flags.DEFINE_string('model_class', 'Fer2013Model', help='Model restore')
+tf.flags.DEFINE_string('model_class', 'Fer2013Model', help='Model class name')
 
 
 class Trainer(BaseTrainer):
